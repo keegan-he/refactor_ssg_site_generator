@@ -53,6 +53,9 @@ pages = [
     },
 ]
 
+for page in pages:
+    print()
+
 
 
 if __name__ =="__main__":
