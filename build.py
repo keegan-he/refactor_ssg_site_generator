@@ -25,5 +25,33 @@ def main():
     photography = top_temp + content + bottom_temp
     open("docs/photography.html", "w+").write(photography)
 
+pages = [
+    {
+        "filename": "content/about.html",
+        "output": "docs/about.html",
+        "title": "About Me",
+    },
+    {
+        "filename": "content/contact.html",
+        "output": "docs/contact.html",
+        "title": "Contact", 
+    },
+    {
+        "filename": "content/music.html",
+        "output": "docs/music.html",
+        "title": "Music",
+    },
+    {
+        "filename": "content/photography.html",
+        "output": "docs/photography.html",
+        "title": "Photography",
+    },
+    {
+        "filename": "content/projects.html",
+        "output": "docs/projects.html",
+        "title": "Photography",
+    }
+]
+
 if __name__ =="__main__":
     main()
