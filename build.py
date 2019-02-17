@@ -49,13 +49,15 @@ pages = [
     {
         "filename": "content/projects.html",
         "output": "docs/projects.html",
-        "title": "Photography",
+        "title": "Projects",
     },
 ]
 
 for page in pages:
-    print()
+    print(page)
 
+page_title = page["title"]
+print(page_title)
 
 
 if __name__ =="__main__":
