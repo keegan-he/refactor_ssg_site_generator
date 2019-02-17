@@ -5,27 +5,32 @@ def main():
     index_html = top_temp + content + bottom_temp
     open("docs/index.html", "w+").write(index_html)
 
-    content = open("content/about.html").read()
-    about = top_temp + content + bottom_temp
-    open("docs/about.html", "w+").write(about)
+    #content = open("content/about.html").read()
+    #about = top_temp + content + bottom_temp
+    #open("docs/about.html", "w+").write(about)
 
-    content = open("content/contact.html").read()
-    contact = top_temp + content + bottom_temp
-    open("docs/contact.html", "w+").write(contact)
+    #content = open("content/contact.html").read()
+    #contact = top_temp + content + bottom_temp
+    #open("docs/contact.html", "w+").write(contact)
 
-    content = open("content/projects.html").read()
-    projects = top_temp + content + bottom_temp
-    open("docs/projects.html", "w+").write(projects)
+    #content = open("content/projects.html").read()
+    #projects = top_temp + content + bottom_temp
+    #open("docs/projects.html", "w+").write(projects)
 
-    content = open("content/music.html").read()
-    music = top_temp + content + bottom_temp
-    open("docs/music.html", "w+").write(music)
+    #content = open("content/music.html").read()
+    #music = top_temp + content + bottom_temp
+    #open("docs/music.html", "w+").write(music)
 
-    content = open("content/photography.html").read()
-    photography = top_temp + content + bottom_temp
-    open("docs/photography.html", "w+").write(photography)
+    #content = open("content/photography.html").read()
+    #photography = top_temp + content + bottom_temp
+    #open("docs/photography.html", "w+").write(photography)
 
 pages = [
+    {
+        "filename": "content/index.html",
+        "output": "docs/index.html",
+        "title": "Home",
+    }
     {
         "filename": "content/about.html",
         "output": "docs/about.html",
@@ -54,11 +59,13 @@ pages = [
 ]
 
 for page in pages:
-    print(page)
+    page_title = page["title"]
+    openfile = page["filename"]
+    output_file = page["output"]
+    open(openfile).read()
+    open(output_file, "w+").write(output_file)
 
-page_title = page["title"]
-print(page_title)
-
+print("I ran")
 
 if __name__ =="__main__":
     main()
