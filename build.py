@@ -24,7 +24,6 @@ def main():
     #content = open("content/photography.html").read()
     #photography = top_temp + content + bottom_temp
     #open("docs/photography.html", "w+").write(photography)
-
     pages = [
     {
         "filename": "content/index.html",
