@@ -1,4 +1,4 @@
-print("top test")
+
 top_temp = open("templates/top.html").read()
 content = open("content/index.html").read()
 bottom_temp = open("templates/bottom.html").read()
@@ -24,6 +24,3 @@ open("docs/music.html", "w+").write(music)
 content = open("content/photography.html").read()
 photography = top_temp + content + bottom_temp
 open("docs/photography.html", "w+").write(photography)
-
-
-print("bottom test")
