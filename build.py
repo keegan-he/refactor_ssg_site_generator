@@ -61,8 +61,7 @@ def main():
         page_title = page["title"]
         openfile = page["filename"]
         output_file = page["output"]
-        top_temp = open("templates/top.html").read()
-        bottom_temp = open("templates/bottom.html").read()
+        template = open("templates/base.html").read()
         content = open(openfile).read()
         master_template = top_temp + content + bottom_temp
         open(output_file, "w+").write(master_template)
