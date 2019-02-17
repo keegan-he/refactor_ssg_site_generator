@@ -50,8 +50,10 @@ pages = [
         "filename": "content/projects.html",
         "output": "docs/projects.html",
         "title": "Photography",
-    }
+    },
 ]
+
+
 
 if __name__ =="__main__":
     main()
