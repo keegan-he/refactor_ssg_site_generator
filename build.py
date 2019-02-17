@@ -1,9 +1,9 @@
 def main():
-    top_temp = open("templates/top.html").read()
-    content = open("content/index.html").read()
-    bottom_temp = open("templates/bottom.html").read()
-    index_html = top_temp + content + bottom_temp
-    open("docs/index.html", "w+").write(index_html)
+    #top_temp = open("templates/top.html").read()
+    #content = open("content/index.html").read()
+    #bottom_temp = open("templates/bottom.html").read()
+    #index_html = top_temp + content + bottom_temp
+    #open("docs/index.html", "w+").write(index_html)
 
     #content = open("content/about.html").read()
     #about = top_temp + content + bottom_temp
@@ -25,12 +25,12 @@ def main():
     #photography = top_temp + content + bottom_temp
     #open("docs/photography.html", "w+").write(photography)
 
-pages = [
+    pages = [
     {
         "filename": "content/index.html",
         "output": "docs/index.html",
         "title": "Home",
-    }
+    },
     {
         "filename": "content/about.html",
         "output": "docs/about.html",
@@ -58,12 +58,15 @@ pages = [
     },
 ]
 
-for page in pages:
-    page_title = page["title"]
-    openfile = page["filename"]
-    output_file = page["output"]
-    open(openfile).read()
-    open(output_file, "w+").write(output_file)
+    for page in pages:
+        page_title = page["title"]
+        openfile = page["filename"]
+        output_file = page["output"]
+        top_temp = open("templates/top.html").read()
+        bottom_temp = open("templates/bottom.html").read()
+        content = open(openfile).read()
+        master_template = top_temp + content + bottom_temp
+        open(output_file, "w+").write(master_template)
 
 print("I ran")
 
