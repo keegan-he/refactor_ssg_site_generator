@@ -1,4 +1,29 @@
 def main():
+    #top_temp = open("templates/top.html").read()
+    #content = open("content/index.html").read()
+    #bottom_temp = open("templates/bottom.html").read()
+    #index_html = top_temp + content + bottom_temp
+    #open("docs/index.html", "w+").write(index_html)
+
+    #content = open("content/about.html").read()
+    #about = top_temp + content + bottom_temp
+    #open("docs/about.html", "w+").write(about)
+
+    #content = open("content/contact.html").read()
+    #contact = top_temp + content + bottom_temp
+    #open("docs/contact.html", "w+").write(contact)
+
+    #content = open("content/projects.html").read()
+    #projects = top_temp + content + bottom_temp
+    #open("docs/projects.html", "w+").write(projects)
+
+    #content = open("content/music.html").read()
+    #music = top_temp + content + bottom_temp
+    #open("docs/music.html", "w+").write(music)
+
+    #content = open("content/photography.html").read()
+    #photography = top_temp + content + bottom_temp
+    #open("docs/photography.html", "w+").write(photography)
     pages = [
         {
             "filename": "content/index.html",
@@ -31,10 +56,6 @@ def main():
             "title": "Projects",
         },
     ]
-<<<<<<< HEAD
-
-=======
->>>>>>> c611972dd69d368b9236d4642cfe4ebaafa3e0a0
     for page in pages:
         page_title = page["title"]
         openfile = page["filename"]
@@ -44,11 +65,6 @@ def main():
         finished_content_pages = template.replace("{{content}}", page_content)
         open(output_file, "w+").write(finished_content_pages)
 
-<<<<<<< HEAD
-
-print("I ran")
-
-=======
 # test script ran
 print("I ran")
 
@@ -56,6 +72,5 @@ print("I ran")
 # def add_page():
 
 
->>>>>>> c611972dd69d368b9236d4642cfe4ebaafa3e0a0
 if __name__ == "__main__":
     main()
