@@ -25,49 +25,52 @@ def main():
     #photography = top_temp + content + bottom_temp
     #open("docs/photography.html", "w+").write(photography)
     pages = [
-    {
-        "filename": "content/index.html",
-        "output": "docs/index.html",
-        "title": "Home",
-    },
-    {
-        "filename": "content/about.html",
-        "output": "docs/about.html",
-        "title": "About Me",
-    },
-    {
-        "filename": "content/contact.html",
-        "output": "docs/contact.html",
-        "title": "Contact", 
-    },
-    {
-        "filename": "content/music.html",
-        "output": "docs/music.html",
-        "title": "Music",
-    },
-    {
-        "filename": "content/photography.html",
-        "output": "docs/photography.html",
-        "title": "Photography",
-    },
-    {
-        "filename": "content/projects.html",
-        "output": "docs/projects.html",
-        "title": "Projects",
-    },
-]
-
+        {
+            "filename": "content/index.html",
+            "output": "docs/index.html",
+            "title": "Home",
+        },
+        {
+            "filename": "content/about.html",
+            "output": "docs/about.html",
+            "title": "About Me",
+        },
+        {
+            "filename": "content/contact.html",
+            "output": "docs/contact.html",
+            "title": "Contact",
+        },
+        {
+            "filename": "content/music.html",
+            "output": "docs/music.html",
+            "title": "Music",
+        },
+        {
+            "filename": "content/photography.html",
+            "output": "docs/photography.html",
+            "title": "Photography",
+        },
+        {
+            "filename": "content/projects.html",
+            "output": "docs/projects.html",
+            "title": "Projects",
+        },
+    ]
     for page in pages:
         page_title = page["title"]
         openfile = page["filename"]
         output_file = page["output"]
-        top_temp = open("templates/top.html").read()
-        bottom_temp = open("templates/bottom.html").read()
-        content = open(openfile).read()
-        master_template = top_temp + content + bottom_temp
-        open(output_file, "w+").write(master_template)
+        template = open("templates/base.html").read()
+        page_content = open(openfile).read()
+        finished_content_pages = template.replace("{{content}}", page_content)
+        open(output_file, "w+").write(finished_content_pages)
 
+# test script ran
 print("I ran")
 
-if __name__ =="__main__":
+# Create new function to add page to dict.
+# def add_page():
+
+
+if __name__ == "__main__":
     main()
