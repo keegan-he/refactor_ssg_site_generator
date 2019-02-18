@@ -69,10 +69,10 @@ def main():
         #open(output_file, "w+").write(master_template)
 
 
-# test & make sure script ran
+# test script ran
 print("I ran")
 
-# Create new function to add page to dictionary.
+# Create new function to add page to dict.
 # def add_page():
 
 
