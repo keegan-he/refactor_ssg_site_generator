@@ -56,18 +56,14 @@ def main():
             "title": "Projects",
         },
     ]
-
     for page in pages:
         page_title = page["title"]
         openfile = page["filename"]
         output_file = page["output"]
         template = open("templates/base.html").read()
         page_content = open(openfile).read()
-        #master_template = template + content
         finished_content_pages = template.replace("{{content}}", page_content)
         open(output_file, "w+").write(finished_content_pages)
-        #open(output_file, "w+").write(master_template)
-
 
 # test script ran
 print("I ran")
