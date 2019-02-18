@@ -31,14 +31,20 @@ def main():
             "title": "Projects",
         },
     ]
+    return
+
+def readpages(content):
     for page in pages:
         page_title = page["title"]
         openfile = page["filename"]
         output_file = page["output"]
         template = open("templates/base.html").read()
         page_content = open(openfile).read()
-        finished_content_pages = template.replace("{{content}}", page_content)
-        open(output_file, "w+").write(finished_content_pages)
+        return content
+
+def writepages():
+    finished_content_pages = template.replace("{{content}}", page_content)
+    open(output_file, "w+").write(finished_content_pages)
 
 
 print("I ran")
