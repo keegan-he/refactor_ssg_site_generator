@@ -63,8 +63,8 @@ def main():
         output_file = page["output"]
         template = open("templates/base.html").read()
         content = open(openfile).read()
-        master_template = template + content
-        finished_content_pages = master_template.replace("{{content}}", content)
+        #master_template = template + content
+        finished_content_pages = template.replace("{{content}}", content)
         open(output_file, "w+").write(finished_content_pages)
         #open(output_file, "w+").write(master_template)
 
