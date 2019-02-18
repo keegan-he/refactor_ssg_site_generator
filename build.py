@@ -69,7 +69,7 @@ def main():
         #open(output_file, "w+").write(master_template)
 
 
-# test to make sure script ran
+# test & make sure script ran
 print("I ran")
 
 # Create new function to add page to dictionary.
