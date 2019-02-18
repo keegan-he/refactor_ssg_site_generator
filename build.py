@@ -25,37 +25,37 @@ def main():
     #photography = top_temp + content + bottom_temp
     #open("docs/photography.html", "w+").write(photography)
     pages = [
-    {
-        "filename": "content/index.html",
-        "output": "docs/index.html",
-        "title": "Home",
-    },
-    {
-        "filename": "content/about.html",
-        "output": "docs/about.html",
-        "title": "About Me",
-    },
-    {
-        "filename": "content/contact.html",
-        "output": "docs/contact.html",
-        "title": "Contact", 
-    },
-    {
-        "filename": "content/music.html",
-        "output": "docs/music.html",
-        "title": "Music",
-    },
-    {
-        "filename": "content/photography.html",
-        "output": "docs/photography.html",
-        "title": "Photography",
-    },
-    {
-        "filename": "content/projects.html",
-        "output": "docs/projects.html",
-        "title": "Projects",
-    },
-]
+        {
+            "filename": "content/index.html",
+            "output": "docs/index.html",
+            "title": "Home",
+        },
+        {
+            "filename": "content/about.html",
+            "output": "docs/about.html",
+            "title": "About Me",
+        },
+        {
+            "filename": "content/contact.html",
+            "output": "docs/contact.html",
+            "title": "Contact",
+        },
+        {
+            "filename": "content/music.html",
+            "output": "docs/music.html",
+            "title": "Music",
+        },
+        {
+            "filename": "content/photography.html",
+            "output": "docs/photography.html",
+            "title": "Photography",
+        },
+        {
+            "filename": "content/projects.html",
+            "output": "docs/projects.html",
+            "title": "Projects",
+        },
+    ]
 
     for page in pages:
         page_title = page["title"]
@@ -67,7 +67,8 @@ def main():
         master_template = top_temp + content + bottom_temp
         open(output_file, "w+").write(master_template)
 
+
 print("I ran")
 
-if __name__ =="__main__":
+if __name__ == "__main__":
     main()
