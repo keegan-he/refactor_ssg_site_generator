@@ -49,7 +49,6 @@ def apply_template(content):
     template = open("templates/base.html").read()  # Read in template
     finished_content_pages = template.replace("{{content}}", page_content)  # string replacing
     open(output_file, "w+").write(finished_content_pages)
-    return content
 
 
 def write():
