@@ -47,13 +47,12 @@ def read_pages():
 
 def apply_template(content):
     template = open("templates/base.html").read()  # Read in template
-    finished_content_pages = template.replace(
-        "{{content}}", page_content)  # string replacing
+    finished_content_pages = template.replace("{{content}}", page_content)  # string replacing
     open(output_file, "w+").write(finished_content_pages)
     return results
 
 
-def main():
+def write():
     content = open("docs/index.html")
     resulting_html_for_index = apply_template(content)
     # test script ran
@@ -61,11 +60,9 @@ def main():
     # Create new function to add page to dict.
     # def add_page():
 
-
 def main():
 
-
-read_pages()
+    read_pages()
 
 if __name__ == "__main__":
     main()
