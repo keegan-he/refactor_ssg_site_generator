@@ -1,53 +1,62 @@
-def main():
+#def main():
+def read_pages():
+    """ docstring for function"""
     pages = [
-        {
-            "filename": "content/index.html",
-            "output": "docs/index.html",
-            "title": "Home",
-        },
-        {
-            "filename": "content/about.html",
-            "output": "docs/about.html",
-            "title": "About Me",
-        },
-        {
-            "filename": "content/contact.html",
-            "output": "docs/contact.html",
-            "title": "Contact",
-        },
-        {
-            "filename": "content/music.html",
-            "output": "docs/music.html",
-            "title": "Music",
-        },
-        {
-            "filename": "content/photography.html",
-            "output": "docs/photography.html",
-            "title": "Photography",
-        },
-        {
-            "filename": "content/projects.html",
-            "output": "docs/projects.html",
-            "title": "Projects",
-        },
-    ]
-    return
-
-def readpages(content):
+            {
+                "filename": "content/index.html",
+                "output": "docs/index.html",
+                "title": "Home",
+            },
+            {
+                "filename": "content/about.html",
+                "output": "docs/about.html",
+                "title": "About Me",
+            },
+            {
+                "filename": "content/contact.html",
+                "output": "docs/contact.html",
+                "title": "Contact",
+            },
+            {
+                "filename": "content/music.html",
+                "output": "docs/music.html",
+                "title": "Music",
+            },
+            {
+                "filename": "content/photography.html",
+                "output": "docs/photography.html",
+                "title": "Photography",
+            },
+            {
+                "filename": "content/projects.html",
+                "output": "docs/projects.html",
+                "title": "Projects",
+            },
+        ]
     for page in pages:
         page_title = page["title"]
         openfile = page["filename"]
         output_file = page["output"]
-        template = open("templates/base.html").read()
+        #template = open("templates/base.html").read()
         page_content = open(openfile).read()
-        return content
+        #finished_content_pages = template.replace("{{content}}", page_content)
+        #open(output_file, "w+").write(finished_content_pages)
+        return
+read_pages()
 
-def writepages():
-    finished_content_pages = template.replace("{{content}}", page_content)
+def apply_template(content):
+    template = open("templates/base.html").read() # Read in template
+    finished_content_pages = template.replace("{{content}}", page_content) #string replacing
     open(output_file, "w+").write(finished_content_pages)
+    return results
 
-
+def main():
+    content = open("docs/index.html")
+    resulting_html_for_index = apply_template(content)
+# test script ran
 print("I ran")
+# Create new function to add page to dict.
+# def add_page():
 
 if __name__ == "__main__":
     main()
