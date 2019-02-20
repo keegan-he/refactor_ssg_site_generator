@@ -48,8 +48,7 @@ def read_content():
 def apply_template():
     """ read template file and combine with content  """
     template = open("templates/base.html").read()  # Read in template
-    finished_content_pages = template.replace(
-        "{{content}}", read_content())  # string replacing
+    finished_content_pages = template.replace("{{content}}", read_content())  # string replacing
     return finished_content_pages
 
 
