@@ -53,7 +53,6 @@ def write():
         output_file = page["output"]
         open(output_file, "w+").write(apply_template())
 
-
 def main():
     #read_content()
     #apply_template()
