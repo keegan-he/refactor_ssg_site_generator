@@ -34,6 +34,7 @@ pages = [
 
 
 def read_content():
+    """ loop, open and read all content from pages """
     for page in pages:
         openfile = page["filename"]
         page_content = open(openfile).read()
@@ -53,12 +54,14 @@ def apply_template():
 
 
 def write_content():
+    """ loop through pages and write content to output files """
     for page in pages:
         output_file = page["output"]
         open(output_file, "w+").write(apply_template())
 
 
 def main():
+    """ invoke write content function """
     # read_content()
     # apply_template()
     write_content()
