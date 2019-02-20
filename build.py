@@ -1,4 +1,4 @@
-# def main():
+
 pages = [
     {
         "filename": "content/index.html",
@@ -31,32 +31,32 @@ pages = [
         "title": "Projects",
     },
 ]
+def read_content():
+    for page in pages:
+            openfile = page["filename"]
+            page_content = open(openfile).read()
+            return page_content
+            #page_title = page["title"]
+            #output_file = page["output"]
+            #template = open("templates/base.html").read()
+            #finished_content_pages = template.replace("{{content}}", page_content)
+            #open(output_file, "w+").write(finished_content_pages)
 
-for page in pages:
-        #page_title = page["title"]
-        openfile = page["filename"]
-        output_file = page["output"]
-        #template = open("templates/base.html").read()
-        page_content = open(openfile).read()
-        #finished_content_pages = template.replace("{{content}}", page_content)
-        #open(output_file, "w+").write(finished_content_pages)
-
-
-def apply_template(content):
+def apply_template():
     """ read template file and combine with content  """
     template = open("templates/base.html").read()  # Read in template
-    finished_content_pages = template.replace("{{content}}", page_content)  # string replacing
-    open(output_file, "w+").write(finished_content_pages)
-
+    finished_content_pages = template.replace("{{content}}", read_content())  # string replacing
+    return finished_content_pages
 
 def write():
-    content = open("docs/index.html")
-    resulting_html_for_index = apply_template(content)
+    for page in pages:
+        output_file = page["output"]
+        open(output_file, "w+").write(apply_template())
 
 
 def main():
-
-    apply_template(content)
+    #read_content()
+    #apply_template()
     write()
 
 
