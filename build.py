@@ -53,7 +53,7 @@ def apply_template():
     return finished_content_pages
 
 
-def write():
+def write_content():
     for page in pages:
         output_file = page["output"]
         open(output_file, "w+").write(apply_template())
@@ -62,7 +62,7 @@ def write():
 def main():
     # read_content()
     # apply_template()
-    write()
+    write_content()
 
 
 if __name__ == "__main__":
