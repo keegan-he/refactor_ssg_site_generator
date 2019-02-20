@@ -38,7 +38,8 @@ def read_content():
     for page in pages:
         openfile = page["filename"]
         page_content = open(openfile).read()
-        return page_content
+
+    return page_content
         #page_title = page["title"]
         #output_file = page["output"]
         #template = open("templates/base.html").read()
@@ -50,6 +51,7 @@ def apply_template():
     """ read template file and combine with content  """
     template = open("templates/base.html").read()  # Read in template
     finished_content_pages = template.replace("{{content}}", read_content())  # string replacing
+    
     return finished_content_pages
 
 
@@ -57,7 +59,10 @@ def write_content():
     """ loop through pages and write content to output files """
     for page in pages:
         output_file = page["output"]
-        open(output_file, "w+").write(apply_template())
+        #open(output_file, "w+").write(apply_template())
+        final_write = open(output_file, "w+").write(apply_template())
+    
+    return final_write
 
 
 def main():
