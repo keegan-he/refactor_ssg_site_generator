@@ -1,5 +1,9 @@
 
-pages = [
+# TEMPLATE = template = open("templates/base.html").read()
+with open("templates/base.html", "r") as file:
+    TEMPLATE = file.read()
+
+PAGES = [
     {
         "filename": "content/index.html",
         "output": "docs/index.html",
@@ -32,44 +36,27 @@ pages = [
     },
 ]
 
-
-def read_content():
-    """ loop, open and read all content from pages """
-    for page in pages:
-        openfile = page["filename"]
-        page_content = open(openfile).read()
-
-    return page_content
-        #page_title = page["title"]
-        #output_file = page["output"]
-        #template = open("templates/base.html").read()
-        #finished_content_pages = template.replace("{{content}}", page_content)
-        #open(output_file, "w+").write(finished_content_pages)
+def read_content(filename):
+    return open(filename).read()
 
 
-def apply_template():
+def apply_template(a_string):
     """ read template file and combine with content  """
-    template = open("templates/base.html").read()  # Read in template
-    finished_content_pages = template.replace("{{content}}", read_content())  # string replacing
-    
-    return finished_content_pages
+    return TEMPLATE.replace("{{content}}", a_string)  # string replacing
 
 
-def write_content():
+def write_content(content, output_filename):
     """ loop through pages and write content to output files """
-    for page in pages:
-        output_file = page["output"]
-        #open(output_file, "w+").write(apply_template())
-        final_write = open(output_file, "w+").write(apply_template())
-    
-    return final_write
+    with open(output_filename, "w+") as outfile:
+        outfile.write(content)
 
 
 def main():
     """ invoke write content function """
-    # read_content()
-    # apply_template()
-    write_content()
+    for page in PAGES:
+        content = read_content(page["filename"])
+        templated_content = apply_template(content)
+        write_content(templated_content, page["output"])
 
 
 if __name__ == "__main__":
